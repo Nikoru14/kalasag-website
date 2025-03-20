@@ -43,14 +43,14 @@ const NavBar = () => {
     };
 
     return (
-        <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-lg shadow-lg px-6 lg:px-16">
-            <div className="max-w-7xl mx-auto flex justify-between items-center py-4">
+        <nav className="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-lg shadow-lg px-4 lg:px-20">
+            <div className="max-w-8xl flex flex-wrap items-center  justify-between py-4">
                 {/* Logo */}
-                <div className="flex items-center space-x-4 cursor-pointer" onClick={() => scrollToSection("home")}>
-                    <img className="logo" src="./vite.svg" alt="logo"></img>
+                <div className="flex items-center space-x-1 cursor-pointer" onClick={() => scrollToSection("home")}>
+                    <img className="logo" src="./logo.png" alt="logo"></img>
                     <div className="flex flex-col text-left">
                         <h1
-                            className="text-5xl font-bold font-brand cursor-pointer text-primary tracking-[0.50rem]"
+                            className="text-3xl md:text-5xl font-bold font-brand cursor-pointer text-primary tracking-[0.50rem]"
                             onClick={() => scrollToSection("home")}
                         >
                             KALASAG
@@ -63,7 +63,7 @@ const NavBar = () => {
 
 
                 {/* Desktop Menu */}
-                <ul className="hidden md:flex space-x-8">
+                <ul className="hidden lg:flex space-x-8">
                     {[
                         { name: "Home", id: "home" },
                         { name: "About", id: "about" },
@@ -88,13 +88,13 @@ const NavBar = () => {
                 </ul>
 
                 {/* Mobile Menu Button */}
-                <button className="md:hidden text-white text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
+                <button className="lg:hidden flex text-white text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
                     {menuOpen ? <FaTimes /> : <FaBars />}
                 </button>
             </div>
 
             {/* Mobile Menu */}
-            <div className={`md:hidden absolute top-22 left-0 w-full bg-black/90 backdrop-blur-md transition-all duration-300 ${menuOpen ? "block" : "hidden"}`}>
+            <div className={`lg:hidden absolute top-32 md:top-22 left-0 w-full bg-black/90 backdrop-blur-md transition-all duration-300 ${menuOpen ? "block" : "hidden"}`}>
                 <ul className="flex flex-col space-y-4 text-center py-6">
                     {[
                         { name: "Home", id: "home" },
